@@ -1,3 +1,4 @@
+import 'package:bank_gold/components/btn_ink.dart';
 import 'package:bank_gold/components/btn_primario.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,20 +44,35 @@ class TelaInicial extends StatelessWidget {
                   ),
                 ),
               ),
-              BtnPrimario(
-                  context: context,
-                  texto: "Abrir conta",
-                  cor: Colors.white,
-                  icon: null,
-                  funcao: () {},
-                  corTexto: Colors.black),
-              BtnPrimario(
-                  context: context,
-                  texto: "Já tenho conta",
-                  cor: Colors.white,
-                  icon: null,
-                  funcao: () {},
-                  corTexto: Colors.black),
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(100),
+                  onTap: () {},
+                  child: const BtnInk(
+                      texto: "Abrir conta",
+                      cor: Colors.white,
+                      icon: null,
+                      corTexto: Colors.black),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(100),
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, "/principal");
+                    },
+                    child: const BtnInk(
+                        texto: "Já tenho conta",
+                        cor: Colors.white,
+                        icon: null,
+                        corTexto: Colors.black),
+                  ),
+                ),
+              ),
               const Padding(
                 padding: EdgeInsets.only(top: 50, bottom: 5),
                 child: Text("Conheça os beneficiçios"),

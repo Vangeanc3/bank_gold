@@ -1,5 +1,6 @@
-import 'package:bank_gold/tela_iinicial/tela_inicial.dart';
-import 'package:bank_gold/tela_iinicial/teste.dart';
+import 'package:bank_gold/screens/tela_cotacao/tela_cotacao.dart';
+import 'package:bank_gold/screens/tela_inicial/tela_inicial.dart';
+import 'package:bank_gold/screens/tela_principal/tela_principal.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/inicial",
       routes: {
         "/inicial": (context) => const TelaInicial(),
-        "/teste": (context) => const Teste()
+        "/principal": (context) => const TelaPrincipal(),
+        "/cotacao": (context) => const TelaCotacao()
       },
     );
   }
