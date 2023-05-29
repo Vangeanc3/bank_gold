@@ -1,6 +1,7 @@
 import 'package:bank_gold/screens/tela_cotacao/tela_cotacao.dart';
 import 'package:bank_gold/screens/tela_inicial/tela_inicial.dart';
 import 'package:bank_gold/screens/tela_principal/tela_principal.dart';
+import 'package:bank_gold/screens/tela_transferencia/tela_transferencia.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/inicial": (context) => const TelaInicial(),
         "/principal": (context) => const TelaPrincipal(),
-        "/cotacao": (context) => const TelaCotacao()
+        "/cotacao": (context) => const TelaCotacao(),
+        "/transferir": (context) => const TelaTransferencia()
       },
     );
   }

@@ -1,7 +1,5 @@
 import 'package:bank_gold/components/box_card.dart';
-import 'package:bank_gold/screens/tela_cotacao/tela_cotacao.dart';
 import 'package:bank_gold/screens/tela_principal/widgets/acoes_btn.dart';
-import 'package:bank_gold/services/cotacao_services.dart';
 import 'package:flutter/material.dart';
 
 class TelaPrincipal extends StatelessWidget {
@@ -31,6 +29,7 @@ class TelaPrincipal extends StatelessWidget {
                     filho: Column(
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset(
                               "assets/imgs/logo.png",
@@ -44,18 +43,25 @@ class TelaPrincipal extends StatelessWidget {
                                         color: Color.fromRGBO(218, 177, 88, 1),
                                         fontSize: 16)),
                                 Text(
-                                  "Aryelton",
+                                  "Bianca",
                                   style: TextStyle(fontSize: 18),
                                 )
                               ],
                             ),
-                            const Padding(
-                              padding: EdgeInsets.only(left: 10, right: 10),
-                              child: Icon(Icons.account_circle, size: 40),
-                            ),
+                            Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  image: const DecorationImage(
+                                      image:
+                                          AssetImage("assets/imgs/modelo.jpg"),
+                                      fit: BoxFit.cover),
+                                )),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text("Saldo em conta:",
+                                const Text("Saldo:",
                                     style: TextStyle(
                                         color: Color.fromRGBO(218, 177, 88, 1),
                                         fontSize: 16)),
@@ -64,7 +70,7 @@ class TelaPrincipal extends StatelessWidget {
                                     Padding(
                                       padding: EdgeInsets.only(right: 4),
                                       child: Text("R\$ ${1999.99}",
-                                          style: TextStyle(fontSize: 18)),
+                                          style: TextStyle(fontSize: 16)),
                                     ),
                                     Icon(Icons.visibility)
                                   ],
@@ -87,13 +93,13 @@ class TelaPrincipal extends StatelessWidget {
                   spacing: 10,
                   runSpacing: 20,
                   children: [
-                    AcoesBtn(
-                        texto: "Extrato",
-                        funcao: () {
-                          CotacaoService().verCotacao();
-                        }),
+                    AcoesBtn(texto: "Extrato", funcao: () {}),
                     AcoesBtn(texto: "Pagar", funcao: () {}),
-                    AcoesBtn(texto: "Transferir", funcao: () {}),
+                    AcoesBtn(
+                        texto: "Transferir",
+                        funcao: () {
+                          Navigator.pushNamed(context, "/transferir");
+                        }),
                     AcoesBtn(texto: "Depositar", funcao: () {}),
                     AcoesBtn(texto: "Débito automático", funcao: () {}),
                     AcoesBtn(texto: "Usuário", funcao: () {}),

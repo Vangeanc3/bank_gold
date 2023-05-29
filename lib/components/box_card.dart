@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BoxCard extends StatelessWidget {
   final Gradient? degrade;
-  
+
   final Widget filho;
   const BoxCard({super.key, this.degrade, required this.filho});
 

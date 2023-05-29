@@ -8,16 +8,15 @@ class CotacaoService {
 
   // FUNÇÃO QUE VAI CHAMAR A API E RETORNA OS DADOS
   Future<Map<String, dynamic>> verCotacao() async {
-    
     // FAZENDO A SOLICITAÇÃO DA API
-    http.Response response = await http.get(Uri.parse(url));
+    http.Response resposta = await http.get(Uri.parse(url));
 
     // VERIFICA SE PODE OCORRER ERROS AO SOLICITAR OS DADOS, CASO TENHA ERROS, IRA RETORNA UMA EXCEÇÃO
-    if (response.statusCode != 200) {
+    if (resposta.statusCode != 200) {
       throw Exception();
     }
     //DADOS
-    Map<String, dynamic> resultado = json.decode(response.body);
+    Map<String, dynamic> resultado = json.decode(resposta.body);
 
     // DADOS RETORNADOS
     return resultado["results"]["currencies"];

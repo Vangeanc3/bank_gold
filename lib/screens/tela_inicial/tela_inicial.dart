@@ -1,5 +1,4 @@
 import 'package:bank_gold/components/btn_ink.dart';
-import 'package:bank_gold/components/btn_primario.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
