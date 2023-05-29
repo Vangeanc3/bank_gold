@@ -10,14 +10,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bank Gold',
+      // MUDANDO O TEMA DO APLICATIVO PARA O MODO ESCURO
       theme: ThemeData.dark(),
+      //DEFININDO A TELA INICIAL
       initialRoute: "/inicial",
+      // DEFININDO O ENDEREÇO DAS TELAS DO APP COM ROTAS NOMEADAS
       routes: {
         "/inicial": (context) => const TelaInicial(),
         "/principal": (context) => const TelaPrincipal(),

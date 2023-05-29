@@ -193,9 +193,12 @@ class _TelaCotacaoState extends State<TelaCotacao> {
                         child: InkWell(
                           borderRadius: BorderRadius.circular(100),
                           onTap: () async {
+
+                            // CONDIÇÃO QUE VERIFICA SE OS DADOS DO FORMULARIO ESTÃO PREENCHIDOS CORRETAMENTE
                             if (_formKey.currentState!.validate()) {
                               double real = double.parse(realController.text);
 
+                              // CHAMADA DA FUNÇÃO DOS SERVICES
                               Map<String, dynamic> cotacao =
                                   await CotacaoService().verCotacao();
 
@@ -209,6 +212,7 @@ class _TelaCotacaoState extends State<TelaCotacao> {
                               String euroFormatado =
                                   euroResposta.toStringAsFixed(2);
 
+                              // MUDANDO O ESTADO DA TELA, AVISANDO QUE OUVE UMA MUDANÇA
                               setState(() {
                                 euro = double.parse(euroFormatado);
                                 dolar = double.parse(dolarFormatado);
